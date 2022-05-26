@@ -1,0 +1,16 @@
+@use '../util/variables' as u;
+
+@mixin button($textColor : u.$white-color, $backgroundColor: u.$primary-color) {
+    display: inline-block;
+    width: fit-content;
+    padding: .75rem 1rem;
+    border: 0.4rem;
+    background-color: $backgroundColor;
+    color: $textColor; 
+    cursor: pointer;
+    transition: all 400ms ease;
+        border-radius: 0.4rem;
+    &:hover{
+    background-color: lighten($backgroundColor, 8%);
+    }
+}
