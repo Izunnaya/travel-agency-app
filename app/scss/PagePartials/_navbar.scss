@@ -1,3 +1,39 @@
-@use '../util' as u; 
+@use "../util" as u;
+@use "../global/mixins" as *;
+nav {
+  width: 100vw;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  position: sticky;
+}
 
+.nav__container {
+  @include flex;
+  justify-content: space-between;
 
+  ul {
+    @include flex;
+    gap: 3rem;
+
+    .btn {
+      background-color: transparent;
+      border: 1px solid u.$text-dark;
+      padding: 0.43rem 0.87rem;
+
+      &:hover {
+        background-color: u.$primary-color;
+        color: u.$white-color;
+        border: none;
+      }
+    }
+  }
+  a {
+    color: u.$text-dark;
+  }
+  // buttons are only meant to be visible on medium sized devices and smaller devices.
+  button {
+    display: none;
+  }
+}
