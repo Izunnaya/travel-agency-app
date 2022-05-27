@@ -17,6 +17,11 @@ nav {
     @include flex;
     gap: 3rem;
 
+    a {
+      color: u.$text-dark;
+      font-weight: 500;
+    }
+
     .btn {
       background-color: transparent;
       border: 1px solid u.$text-dark;
@@ -29,9 +34,7 @@ nav {
       }
     }
   }
-  a {
-    color: u.$text-dark;
-  }
+
   // buttons are only meant to be visible on medium sized devices and smaller devices.
   button {
     display: none;
