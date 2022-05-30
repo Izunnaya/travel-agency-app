@@ -21,6 +21,7 @@ header {
   background-repeat: no-repeat;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
 }
 .btn {
   @include u.button;

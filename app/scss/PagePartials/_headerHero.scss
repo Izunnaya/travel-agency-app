@@ -1,2 +1,31 @@
 @use "../util" as u;
 @use "../global/mixins" as *;
+
+.headerHero__content {
+  display: grid;
+  gap: 2;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  margin: 1.8rem 0;
+}
+.headerHero__info {
+  width: 30rem;
+  & h4 {
+    color: u.$primary-color;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    letter-spacing: 0.055rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  & h1 {
+    font-size: 4.5rem;
+    font-family: inherit;
+    margin: 1.5rem 0;
+  }
+}
+.headerHero__img {
+  width: 35rem;
+}
