@@ -15,10 +15,10 @@
     background-color: lighten($backgroundColor, 8%);
   }
 }
-@mixin flex {
+@mixin flex($jsfc: center) {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: $jsfc;
 }
 @mixin text-center {
   margin: 0 auto;
