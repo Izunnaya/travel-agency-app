@@ -2,11 +2,12 @@
 @use "../global/mixins" as *;
 nav {
   width: 100vw;
-  height: 4.5rem;
+  height: 8vh;
   display: grid;
   place-items: center;
   z-index: 1;
-  position: sticky;
+  position: fixed;
+  background-color: red;
 }
 
 .nav__container {
@@ -16,6 +17,7 @@ nav {
   ul {
     @include flex;
     gap: 3rem;
+    transition: all 400ms ease;
 
     a {
       color: u.$text-dark;
@@ -36,7 +38,171 @@ nav {
   }
 
   // buttons are only meant to be visible on medium sized devices and smaller devices.
-  button {
+  .menuBtn {
     display: none;
+    cursor: pointer;
   }
 }
+// ===================START OF MEDIA QUERIES=========================
+
+// SMALL SCREEN SIZES
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .nav {
+    background-color: u.$primary-color;
+  }
+
+  .bar {
+    display: block;
+    height: 5px;
+    background: white;
+    width: 40px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  // Hamburger Menu appearing on small screens
+  .menuBtn {
+    display: block !important;
+
+    // Hamburger Menu animation
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    &.active .bar:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    &.active .bar:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+
+  .nav__container {
+    width: 100%;
+    position: relative;
+    padding: 0 2rem;
+
+    // side bar that shows
+    .nav__items {
+      @include flex;
+      flex-direction: column;
+      gap: 60px;
+      position: absolute;
+      right: 0;
+      top: 5vh;
+      height: 95vh;
+      background-color: u.$primary-color;
+      opacity: 0.9;
+      z-index: 100;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      li a {
+        color: lighten(u.$white-color, 50%);
+        font-size: 1.9rem;
+        font-weight: 500;
+        line-height: 1.2;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: 0.3s ease-in-out;
+
+        //============= hover effeects on navigation linkss============
+        &:hover {
+          color: darken(u.$white-color, 12%);
+        }
+        &.btn {
+          background: lighten(#f26430, 22%);
+          border: none;
+          color: u.$text-dark;
+
+          &:hover {
+            background: darken(#f26430, 20%);
+            color: u.$white-color;
+            padding: 0.7rem 1.2rem;
+          }
+        }
+        &.lang {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//============MEDIUM SIZED DEVICES========
+// @media screen and (max-width: 1024px) {
+//   nav {
+//     background-color: u.$primary-color;
+//   }
+//   .nav__container {
+//     width: u.$container-md;
+//     position: relative;
+//     width: 100vw;
+
+//     button {
+//       display: inline-block;
+//       color: u.$white-color;
+//       background: transparent;
+//       font-size: 3rem;
+//       border: none;
+//       cursor: pointer;
+
+//       &#nav__close {
+//         display: none;
+//       }
+//     }
+
+//     ul.show {
+//       position: fixed;
+//       right: 0%;
+//       background-color: u.$primary-color;
+//       top: 4.5rem;
+//       flex-direction: column;
+//       width: 50%;
+//       align-items: center;
+//       gap: 0;
+//       padding: 3rem 0;
+//       display: none;
+
+//       li {
+//         width: 100%;
+//         display: flex;
+//         margin-bottom: 1.5rem;
+
+//         a {
+//           height: 100%;
+//           width: 100%;
+//           display: block;
+//           padding: 1.5rem 2rem;
+//           font-size: 1.5rem;
+//           color: u.$white-color;
+//           line-height: 1.3;
+//           letter-spacing: 2px;
+//           border-radius: 0;
+//           background: linear-gradient(
+//             u.$primary-color,
+//             darken(u.$primary-color, 0.95%)
+//           );
+//           &.btn {
+//             background: linear-gradient(
+//               u.$primary-color,
+//               darken(u.$primary-color, 5%)
+//             );
+//             padding: 1.8rem 2rem;
+//             border: none;
+//           }
+//           &.lang {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

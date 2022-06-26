@@ -8,7 +8,7 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
-  margin: 1.8rem 0;
+  margin: 4.5rem 0 1.8rem 0;
 }
 .headerHero__info {
   width: 30rem;
@@ -23,10 +23,10 @@
   }
 
   & img {
-    width: 250px;
+    width: 220px;
     display: inline-block;
     position: absolute;
-    top: 34%;
+    top: 36%;
     left: 20%;
   }
 
@@ -50,6 +50,7 @@
 }
 .headerHero__img {
   width: 37rem;
+  margin-top: 4rem;
 }
 
 .heroHeader__cta {
@@ -69,7 +70,7 @@
     }
   }
 
-  & small {
+  & small a {
     font-size: 1.1rem;
     display: inline-block;
     text-transform: capitalize;
