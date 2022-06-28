@@ -7,7 +7,7 @@ nav {
   place-items: center;
   z-index: 1;
   position: fixed;
-  background-color: red;
+  // background-color: red;
 }
 
 .nav__container {
@@ -47,9 +47,19 @@ nav {
 
 // SMALL SCREEN SIZES
 @media screen and (max-width: 600px) {
-  // not done yet
-}
+  .nav {
+    background-color: u.$primary-color !important;
 
+    & .nav__items.active {
+      width: 100%;
+
+      & li a {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}
+//======Media query for medium-sized screens==================
 @media screen and (max-width: 1024px) {
   .nav {
     background-color: u.$primary-color;
