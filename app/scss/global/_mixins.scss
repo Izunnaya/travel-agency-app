@@ -15,6 +15,11 @@
     background-color: lighten($backgroundColor, 8%);
   }
 }
+
+@mixin btn-secondary-sm {
+  @include u.button($white-color, $secondary-color);
+  padding: 0.85rem 1.5rem;
+}
 @mixin flex($jsfc: center) {
   display: flex;
   align-items: center;

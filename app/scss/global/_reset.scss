@@ -32,6 +32,7 @@ header {
 }
 .btn-secondary {
   @include u.button($white-color, $secondary-color);
+  padding: 1.3rem 1.8rem;
 }
 
 .container {
