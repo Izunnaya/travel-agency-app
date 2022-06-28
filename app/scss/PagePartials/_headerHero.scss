@@ -69,6 +69,8 @@
     color: u.$para-text;
   }
 }
+
+//======================= Media Query for Mid-screens===============
 @media screen and (max-width: 1024px) {
   .headerHero__content {
     display: flex;
@@ -112,6 +114,49 @@
       width: 100%;
       color: u.$para-text;
       text-align: center;
+    }
+  }
+
+  .heroHeader__cta {
+    width: 100%;
+    gap: 1.7rem;
+    @include flex;
+
+    .vid__cta {
+      & i {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 7px 7px 7px 10px;
+        background: u.$primary-color;
+        border-radius: 50%;
+        color: white;
+      }
+    }
+
+    & small a {
+      font-size: 1.1rem;
+      display: inline-block;
+      text-transform: capitalize;
+      color: u.$para-text;
+    }
+  }
+}
+
+// Mobile-Sized Screens
+@media screen and (max-width: 600px) {
+  .headerHero__info {
+    & h4 {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+    & h1 {
+      font-size: 2.7rem;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    & p {
+      margin-bottom: 2.5rem;
     }
   }
 }
